@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+
+const projectsCollection = await getCollection('projects');
+
+---
+
+<Layout title="Hello">
+    <main class="z-0 m-auto">
+        <h1 class="text-center">
+            All Projects</span>
+        </h1>
+
+        <ul role="list" class="link-card-grid">
+        {
+            projectsCollection.map(item => (
+            <Card
+				href={`/project/${item.slug}`}
+				title={item.data.title}
+				body={item.data.description}
+			/>
+            ))
+        }
+        </ul>
+    </main>
+</Layout>
