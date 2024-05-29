@@ -1,62 +1,23 @@
 ---
+import "@/styles/globals.css";
+
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { getCollection } from "astro:content";
-
-const projectsCollection = await getCollection("projects");
 ---
 
 <Layout title="Hello">
-    <main class="z-0 min-w-screen px-8 lg:px-20">
-        <!--  -->
-        <section
-            class="h-screen flex flex-col justify-center items-center lg:flex lg:-mt-10"
-        >
-            <div
-                class="lg:mx-10 lg:px-20 lg:py-16 bg-white lg:shadow-xl lg:rounded-2xl"
-            >
-                <h1 class="m-0 text-5xl font-extrabold text-center">
-                    Hello, This is <span class="text-gradient">Armando</span>
-                </h1>
-                <p class="mt-2 text-center">
-                    A fresh graduate interested in business and technology, data
-                    analytics, web and software development, and technology in
-                    general. Hoping to dive deeper as a <span
-                        class="font-semibold"
-                        >data analyst, web developer,
-                    </span>or <span class="font-semibold">IT consultant</span>.
-                </p>
-                <br />
-                <p class="text-center animate-bounce">^^</p>
-                <p class="text-center animate-spin">&#127775;</p>
-            </div>
-        </section>
-        <section class="h-screen flex flex-col items-center pt-6">
-            <h2 class="m-0 text-3xl font-bold text-center">
-                Featured Projects
-            </h2>
-            <ul
-                role="list"
-                class="mt-8 lg:mx-10 max-w-4xl space-y-3 lg:space-y-0 link-card-grid"
-            >
-                {
-                    projectsCollection.map((projectItem) => (
-                        <div>
-                            <Card
-                                href={`/project/${projectItem.slug}`}
-                                title={projectItem.data.title}
-                                body={projectItem.data.stacks.text}
-                                cover={projectItem.slug}
-                            />
-                        </div>
-                    ))
-                }
-            </ul>
-        </section>
+    <main class="flex-grow flex justify-center items-center">
+        <div class="text-center">
+            <p>Site is still under constructions</p>
+            <div class="animate-bounce">&#9888;</div>
+        </div>
     </main>
 </Layout>
 
 <style>
+    Header {
+        opacity: 50%;
+    }
     .text-gradient {
         background-image: var(--accent-gradient);
         -webkit-background-clip: text;
